@@ -21,15 +21,15 @@ const markers = [
       latitude: 21.08662197,
       longitude: 106.0869917
     },
-    title: 'Trạm thu phí tự động',
+    title: 'Hệ thống thu phí tự động',
     description: 'Trạm thu phí quộc lộ 38'
   },
   {
     latlng: {
-      latitude: 21.09376895,
-      longitude: 106.08186932
+      latitude: 21.11185855,
+      longitude: 106.07821991
     },
-    title: 'Trạm thu phí tự động',
+    title: 'Hệ thống thu phí tự động',
     description: 'Trạm thu phí quộc lộ 38'
   }
 ]
