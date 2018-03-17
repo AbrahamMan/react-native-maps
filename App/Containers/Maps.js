@@ -1,6 +1,7 @@
 import MapView, { Marker } from 'react-native-maps';
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, Image} from 'react-native';
+import tramthuphi from './tramthuphi.jpg';
 
 const styles = StyleSheet.create({
   container: {
@@ -42,8 +43,8 @@ export default class MyApp extends React.Component {
         <MapView
           style={styles.map}
           region={{
-            latitude: 21.0709447,
-            longitude: 106.08146471,
+            latitude: 21.09131844,
+            longitude: 106.08282419,
             latitudeDelta: 0.015,
             longitudeDelta: 0.0121,
           }}
@@ -54,7 +55,11 @@ export default class MyApp extends React.Component {
             title={marker.title}
             description={marker.description}
             key={`${marker.latitude}-${marker.longitude}`}
-          />
+          >
+            <Image source={tramthuphi}
+              style={{width: 20, height: 20}}
+              alt="icon"/>
+          </Marker>
         ))}
         </MapView>
       </View>
