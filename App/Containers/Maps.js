@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import tramthuphi from './tramthuphi.jpg';
 import car from './car.png';
+import { movements, markers } from './markerLocation';
 
 const styles = StyleSheet.create({
 	container: {
@@ -14,126 +15,26 @@ const styles = StyleSheet.create({
 	map: {
 		...StyleSheet.absoluteFillObject,
 	},
+	redius: {
+		height: 50,
+		width: 50,
+		borderRadius: 50/2,
+		overflow: 'hidden',
+		backgroundColor: 'rgba(0, 122, 255, 0.1)',
+		borderWidth: 1,
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	maker: {
+		height: 20,
+		width: 20,
+		borderWidth: 3,
+		borderColor: 'white',
+		borderRadius: 20/2,
+		overflow: 'hidden',
+		backgroundColor: '#007AFF'
+	}
 });
-
-const markers = [
-	{
-		latlng: {
-			latitude: 21.08662197,
-			longitude: 106.0869917
-		},
-		title: 'Hệ thống thu phí tự động',
-		description: 'Trạm thu phí quộc lộ 38'
-	},
-	{
-		latlng: {
-			latitude: 21.11185855,
-			longitude: 106.07821991
-		},
-		title: 'Hệ thống thu phí tự động',
-		description: 'Trạm thu phí quộc lộ 38'
-	}
-]
-
-const movements = [
-	{
-		latlng: {
-			latitude: 21.083347,
-			longitude: 106.09016429
-		}
-	},
-	{
-		latlng: {
-			latitude: 21.08368784,
-			longitude: 106.08984779
-		}
-	},
-	{
-		latlng: {
-			latitude: 21.08391229,
-			longitude: 106.08964628
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08414186,
-			longitude: 106.08943037
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08439338,
-			longitude: 106.08919567
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08468274,
-			longitude: 106.08893081
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08496053,
-			longitude: 106.08868003
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08528779,
-			longitude: 106.08838463
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08566921,
-			longitude: 106.08803405
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.0859395,
-			longitude: 106.08777253
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08610092,
-			longitude: 106.08762367
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08648507,
-			longitude: 106.08726426
-		},
-	},
-
-	{
-		latlng: {
-			latitude: 21.08690839,
-			longitude: 106.0868669
-		},
-	},
-	{
-		latlng: {
-			latitude: 21.08726651,
-			longitude: 106.08652492
-		},
-	}, {
-		latlng: {
-			latitude: 21.0876144,
-			longitude: 106.08620801
-		},
-	},
-	{
-		latlng:
-			{
-				latitude: 21.08840314,
-				longitude: 106.08546269
-			}
-	}
-]
 
 export default class MyApp extends React.Component {
 
@@ -147,6 +48,9 @@ export default class MyApp extends React.Component {
 					<Image source={car}
 						style={{ width: 20, height: 20 }}
 						alt="icon" />
+						<View style={styles.radius}>
+							<View style={styles.marker}></View>
+						</View>
 				</Marker>
 			})
 		)
@@ -184,9 +88,9 @@ export default class MyApp extends React.Component {
 						description='234'
 						key={`${locate.latitude}-${locate.longitude}`}
 					>
-						<Image source={car}
-							style={{ width: 20, height: 20 }}
-							alt="icon" />
+						<View style={styles.radius}>
+							<View style={styles.marker} />
+						</View>
 					</Marker>
 				))}
 				</MapView>

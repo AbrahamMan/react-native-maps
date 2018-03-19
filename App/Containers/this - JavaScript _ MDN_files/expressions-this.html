@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://interactive-examples.mdn.mozilla.net/pages/js/expressions-this.html -->
+<html lang="en" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JavaScript Demo: Expressions - this</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./codemirror-5-31-0.css" rel="stylesheet">
+    <link href="./editor-js.css" rel="stylesheet">
+    
+  </head>
+  <body>
+      <section id="static" class="hidden">
+          <pre><code id="static-js">var test = {
+  prop: 42,
+  func: function() {
+    return this.prop;
+  },
+};
+
+console.log(test.func());
+// expected output: 42
+</code>
+</pre>
+
+      </section>
+
+      <section id="live" class="live">
+          <header><h4>JavaScript Demo: Expressions - this</h4></header>
+          <div id="editor" class="editor"><div class="CodeMirror cm-s-default CodeMirror-focused"><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -17px; border-right-width: 13px; min-height: 112px; min-width: 430.2px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>2</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"></div><div class="CodeMirror-code" role="presentation" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" tabindex="0" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">const</span> <span class="cm-def">methods</span> <span class="cm-operator">=</span> [<span class="cm-string">'get'</span>, <span class="cm-string">'post'</span>, <span class="cm-string">'put'</span>, <span class="cm-string">'patch'</span>, <span class="cm-string">'del'</span>];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">methods</span>.<span class="cm-property">forEach</span>(<span class="cm-def">method</span> <span class="cm-operator">=&gt;</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" contenteditable="false" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 112px;"></div><div class="CodeMirror-gutters" style="height: 125px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div>
+
+          <div class="output-container">
+              <div class="buttons-container">
+                  <button id="execute" class="button run" type="button">Run ›</button>
+                  <button id="reset" type="button" class="button">Reset</button>
+              </div>
+              <div id="output" class="output"><code class="">&gt; 42
+</code></div>
+          </div>
+      </section>
+
+    
+
+    <script src="./codemirror-5-31-0.js.download"></script>
+    <script src="./editor-js.js.download"></script>
+  
+
+</body></html>
