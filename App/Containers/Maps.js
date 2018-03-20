@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import tramthuphi from './tramthuphi.jpg';
 import car from './car.png';
-import { movements, markers } from './markerLocation';
+import { locations, markers } from './markerLocation';
 
 const styles = StyleSheet.create({
 	container: {
@@ -40,7 +40,7 @@ export default class MyApp extends React.Component {
 
 	showCar(locations) {
 		return (
-			locations && locations.map((locate) => {
+			locations && locations.map((locate) => (
 				<Marker
 					coordinate={locate.latlng}
 					key={`${locate.latitude}-${locate.longitude}`}
@@ -52,8 +52,25 @@ export default class MyApp extends React.Component {
 							<View style={styles.marker}></View>
 						</View>
 				</Marker>
-			})
+			))
 		)
+	}
+
+	showMarker(markers) {
+		return (
+			markers && markers.map(marker => (
+				<Marker
+					coordinate={marker.latlng}
+					title={marker.title}
+					description={marker.description}
+					key={`${marker.latitude}-${marker.longitude}`}
+				>
+					<Image source={tramthuphi}
+						style={{ width: 20, height: 20 }}
+						alt="icon" />
+				</Marker>
+			))
+		);
 	}
 	render() {
 		const { region } = this.props;
@@ -69,30 +86,8 @@ export default class MyApp extends React.Component {
 						longitudeDelta: 0.0121,
 					}}
 				>
-					{markers.map(marker => (
-						<Marker
-							coordinate={marker.latlng}
-							title={marker.title}
-							description={marker.description}
-							key={`${marker.latitude}-${marker.longitude}`}
-						>
-							<Image source={tramthuphi}
-								style={{ width: 20, height: 20 }}
-								alt="icon" />
-						</Marker>
-					))}
-				{movements.map(locate => (
-					<Marker
-						coordinate={locate.latlng}
-						title='123'
-						description='234'
-						key={`${locate.latitude}-${locate.longitude}`}
-					>
-						<View style={styles.radius}>
-							<View style={styles.marker} />
-						</View>
-					</Marker>
-				))}
+					{this.showMarker(markers)}
+					{this.showCar(locations)}
 				</MapView>
 			</View>
 		);
