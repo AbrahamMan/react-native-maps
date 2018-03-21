@@ -49,11 +49,13 @@ export default class MyApp extends React.Component {
 			}
 		}
 		this.showCar = this.showCar.bind(this);
+		this.updateState = this.updateState.bind(this);
+
 	}
 
 	updateState() {
 		if(i + 1 < locations.length) {
-			if(locations[i + 1].latlng.latitude === markers.latitude && locations[i + 1].latlng.longitude === markers.longitude) {
+			if(this.state.coordinate.latitude === markers.latlng.latitude) {
 				alert("Bạn vừa đi qua trạm thu phí BOT quốc lộ 38. Mức phí đã thu là 10000");
 			}
 			this.setState({ coordinate: locations[i++].latlng })
@@ -63,7 +65,7 @@ export default class MyApp extends React.Component {
 	showCar() {
 		setTimeout(() => {
 			this.updateState();
-		}, 1000)
+		}, 500)
 	}
 
 	showMarker(markers) {
@@ -97,8 +99,8 @@ export default class MyApp extends React.Component {
 					{this.showMarker(markers)}
 					<Marker
 						coordinate={this.state.coordinate}
-						title='123'
-						description='123'
+						title='Ô tô'
+						description='Ô tô 4 chỗ ngồi'
 						key={`${this.state.coordinate.latitude}-${this.state.coordinate.longitude}`}
 					>
 						<Image source={car}
