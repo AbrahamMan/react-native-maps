@@ -1,21 +1,11 @@
-export const markers = [
-	{
-		latlng: {
-			latitude: 21.08662197,
-			longitude: 106.0869917
-		},
-		title: 'Hệ thống thu phí tự động',
-		description: 'Trạm thu phí quộc lộ 38'
+export const markers = {
+	latlng: {
+		latitude: 21.087056509827253,
+		longitude: 106.086662939201
 	},
-	{
-		latlng: {
-			latitude: 21.11185855,
-			longitude: 106.07821991
-		},
-		title: 'Hệ thống thu phí tự động',
-		description: 'Trạm thu phí quộc lộ 38'
-	}
-];
+	title: 'Hệ thống thu phí tự động',
+	description: 'Trạm thu phí quộc lộ 38'
+};
 
 export const locations = [
 	{
@@ -102,17 +92,53 @@ export const locations = [
 			latitude: 21.08726651,
 			longitude: 106.08652492
 		}
-	}, 
+	},
 	{
 		latlng: {
-			latitude: 21.0876144,
-			longitude: 106.08620801
+			latitude: 21.087056509827253,
+			longitude: 106.086662939201
 		}
 	},
 	{
 		latlng: {
-			latitude: 21.08840314,
-			longitude: 106.08546269
+			latitude: 21.087115123388376,
+			longitude: 106.08657788374194
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.087487508874826,
+			longitude: 106.0862281232935
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.087780811815566,
+			longitude: 106.08603071261177
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.087977014157392,
+			longitude: 106.08583437471543
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.08834989803834,
+			longitude: 106.08548354456843
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.088485287163568,
+			longitude: 106.08537545149602
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.088609414608527,
+			longitude: 106.08526199400558
 		}
 	}
 ]

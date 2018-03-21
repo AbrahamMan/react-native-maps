@@ -54,6 +54,9 @@ export default class MyApp extends React.Component {
 	updateState() {
 		if(i + 1 < locations.length) {
 			this.setState({ coordinate: locations[i++].latlng })
+			if(locations[i++].latlng.latitude === markers.latitude && locations[i++].latlng.longitude === markers.longitude) {
+				alert("Bạn vừa đi qua trạm thu phí BOT quốc lộ 38. Mức phí đã thu là 10000");
+			}
 		}
 	}
 
@@ -65,18 +68,16 @@ export default class MyApp extends React.Component {
 
 	showMarker(markers) {
 		return (
-			markers && markers.map(marker => (
-				<Marker
-					coordinate={marker.latlng}
-					title={marker.title}
-					description={marker.description}
-					key={`${marker.latitude}-${marker.longitude}`}
-				>
-					<Image source={tramthuphi}
-						style={{ width: 20, height: 20 }}
-						alt="icon" />
-				</Marker>
-			))
+			<Marker
+				coordinate={markers.latlng}
+				title={markers.title}
+				description={markers.description}
+				key={`${markers.latitude}-${markers.longitude}`}
+			>
+				<Image source={tramthuphi}
+					style={{ width: 20, height: 20 }}
+					alt="icon" />
+			</Marker>
 		);
 	}
 	render() {
@@ -89,8 +90,8 @@ export default class MyApp extends React.Component {
 					region={{
 						latitude: 21.09131844,
 						longitude: 106.08282419,
-						latitudeDelta: 0.0302,
-						longitudeDelta: 0.0421,
+						latitudeDelta: 0.0202,
+						longitudeDelta: 0.0221,
 					}}
 				>
 					{this.showMarker(markers)}
@@ -101,7 +102,7 @@ export default class MyApp extends React.Component {
 						key={`${this.state.coordinate.latitude}-${this.state.coordinate.longitude}`}
 					>
 						<Image source={car}
-							style={{ width: 20, height: 20 }}
+							style={{ width: 40, height: 20 }}
 							alt="icon" />
 					</Marker>
 				</MapView>
