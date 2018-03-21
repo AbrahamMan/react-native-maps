@@ -89,12 +89,6 @@ export const locations = [
 	},
 	{
 		latlng: {
-			latitude: 21.08726651,
-			longitude: 106.08652492
-		}
-	},
-	{
-		latlng: {
 			latitude: 21.087056509827253,
 			longitude: 106.086662939201
 		}
@@ -140,5 +134,29 @@ export const locations = [
 			latitude: 21.088609414608527,
 			longitude: 106.08526199400558
 		}
+	},
+	{
+		latlng: {
+			latitude: 21.0887748342864,
+			longitude: 106.08512037332048
+		}
+	},	{
+		latlng: {
+			latitude: 21.088890202517224,
+			longitude: 106.08501093914356
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.08901933474675,
+			longitude: 106.08490418717565
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.089142210465866,
+			longitude: 106.0847893885807
+		}
 	}
 ]
+

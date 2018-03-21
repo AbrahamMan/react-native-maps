@@ -53,10 +53,10 @@ export default class MyApp extends React.Component {
 
 	updateState() {
 		if(i + 1 < locations.length) {
-			this.setState({ coordinate: locations[i++].latlng })
-			if(locations[i++].latlng.latitude === markers.latitude && locations[i++].latlng.longitude === markers.longitude) {
+			if(locations[i + 1].latlng.latitude === markers.latitude && locations[i + 1].latlng.longitude === markers.longitude) {
 				alert("Bạn vừa đi qua trạm thu phí BOT quốc lộ 38. Mức phí đã thu là 10000");
 			}
+			this.setState({ coordinate: locations[i++].latlng })
 		}
 	}
 
