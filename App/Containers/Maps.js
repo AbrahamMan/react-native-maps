@@ -51,14 +51,15 @@ export default class MyApp extends React.Component {
 		this.showCar = this.showCar.bind(this);
 	}
 
+	updateState() {
+		if(i + 1 < locations.length) {
+			this.setState({ coordinate: locations[i++].latlng })
+		}
+	}
+
 	showCar() {
-		// setTimeout(() => alert(JSON.stringify(locations[1].latlng['latitude']), 100))
 		setTimeout(() => {
-				this.setState({ coordinate: locations[i].latlng })
-				i++;
-				if(i < locations.length) {
-					this.showCar()
-				}
+			this.updateState();
 		}, 1000)
 	}
 
