@@ -5,6 +5,8 @@ import tramthuphi from './tramthuphi.jpg';
 import car from './car.png';
 import { locations, markers } from './markerLocation';
 
+let i = 0;
+
 const styles = StyleSheet.create({
 	container: {
 		...StyleSheet.absoluteFillObject,
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
 	redius: {
 		height: 50,
 		width: 50,
-		borderRadius: 50/2,
+		borderRadius: 50 / 2,
 		overflow: 'hidden',
 		backgroundColor: 'rgba(0, 122, 255, 0.1)',
 		borderWidth: 1,
@@ -30,30 +32,34 @@ const styles = StyleSheet.create({
 		width: 20,
 		borderWidth: 3,
 		borderColor: 'white',
-		borderRadius: 20/2,
+		borderRadius: 20 / 2,
 		overflow: 'hidden',
 		backgroundColor: '#007AFF'
 	}
 });
 
 export default class MyApp extends React.Component {
+	constructor(props) {
+		super(props);
 
-	showCar(locations) {
-		return (
-			locations && locations.map((locate) => (
-				<Marker
-					coordinate={locate.latlng}
-					key={`${locate.latitude}-${locate.longitude}`}
-				>
-					<Image source={car}
-						style={{ width: 20, height: 20 }}
-						alt="icon" />
-						<View style={styles.radius}>
-							<View style={styles.marker}></View>
-						</View>
-				</Marker>
-			))
-		)
+		this.state = {
+			coordinate: {
+				latitude: 0,
+				longitude: 0
+			}
+		}
+		this.showCar = this.showCar.bind(this);
+	}
+
+	showCar() {
+		// setTimeout(() => alert(JSON.stringify(locations[1].latlng['latitude']), 100))
+		setTimeout(() => {
+				this.setState({ coordinate: locations[i].latlng })
+				i++;
+				if(i < locations.length) {
+					this.showCar()
+				}
+		}, 1000)
 	}
 
 	showMarker(markers) {
@@ -74,7 +80,7 @@ export default class MyApp extends React.Component {
 	}
 	render() {
 		const { region } = this.props;
-
+		this.showCar();
 		return (
 			<View style={styles.container}>
 				<MapView
@@ -82,12 +88,21 @@ export default class MyApp extends React.Component {
 					region={{
 						latitude: 21.09131844,
 						longitude: 106.08282419,
-						latitudeDelta: 0.015,
-						longitudeDelta: 0.0121,
+						latitudeDelta: 0.0302,
+						longitudeDelta: 0.0421,
 					}}
 				>
 					{this.showMarker(markers)}
-					{this.showCar(locations)}
+					<Marker
+						coordinate={this.state.coordinate}
+						title='123'
+						description='123'
+						key={`${this.state.coordinate.latitude}-${this.state.coordinate.longitude}`}
+					>
+						<Image source={car}
+							style={{ width: 20, height: 20 }}
+							alt="icon" />
+					</Marker>
 				</MapView>
 			</View>
 		);
