@@ -157,6 +157,39 @@ export const locations = [
 			latitude: 21.089142210465866,
 			longitude: 106.0847893885807
 		}
+	},
+	{
+		latlng: {
+			latitude: 21.089247,
+			longitude: 106.084674
+		}
+	},	{
+		latlng: {
+			latitude: 21.089467,
+			longitude: 106.084449
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.089748,
+			longitude:106.084192
+		}
+	},
+	{
+		latlng: {
+			latitude: 21.089968,
+			longitude: 106.083945
+		}
+	},	{
+		latlng: {
+			latitude: 21.090210,
+			longitude: 106.083773
+		}
+	},	{
+		latlng: {
+			latitude: 21.090401,
+			longitude: 106.083580
+		}
 	}
 ]
 

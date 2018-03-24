@@ -17,25 +17,6 @@ const styles = StyleSheet.create({
 	map: {
 		...StyleSheet.absoluteFillObject,
 	},
-	redius: {
-		height: 50,
-		width: 50,
-		borderRadius: 50 / 2,
-		overflow: 'hidden',
-		backgroundColor: 'rgba(0, 122, 255, 0.1)',
-		borderWidth: 1,
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-	maker: {
-		height: 20,
-		width: 20,
-		borderWidth: 3,
-		borderColor: 'white',
-		borderRadius: 20 / 2,
-		overflow: 'hidden',
-		backgroundColor: '#007AFF'
-	}
 });
 
 export default class MyApp extends React.Component {
