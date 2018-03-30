@@ -2,7 +2,7 @@ import MapView, { Marker } from 'react-native-maps';
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import tramthuphi from './tramthuphi.jpg';
-import car from './car.png';
+import car2 from './car2.png';
 import { locations, markers } from './markerLocation';
 
 let i = 0;
@@ -84,8 +84,8 @@ export default class MyApp extends React.Component {
 						description='Ô tô 4 chỗ ngồi'
 						key={`${this.state.coordinate.latitude}-${this.state.coordinate.longitude}`}
 					>
-						<Image source={car}
-							style={{ width: 40, height: 20 }}
+						<Image source={car2}
+							style={{ width: 40, height: 40 }}
 							alt="icon" />
 					</Marker>
 				</MapView>
